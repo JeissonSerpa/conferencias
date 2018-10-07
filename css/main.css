@@ -323,6 +323,8 @@ h2::after{
     height: 30px;
     width: 100%; 
     display: block;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 @media only screen and (min-width: 770px){
@@ -490,4 +492,84 @@ div.contenido-programa{
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+div.contenido-programa{
+    background: rgba(53, 53, 53, .7);
+    width: 100%;
+}
+
+@media only screen and (min-width:768px){
+    div.contenido-programa{
+        width: 40%;
+        margin: 9% 40px;
+        border-radius: 10px;
+        height: 75%;
+        padding: 30px;
+    }
+}
+
+nav.menu-programa{
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #fe4918;
+    padding-bottom: 10px;
+}
+
+nav.menu-programa a{
+    display: table-cell;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav.menu-programa i{
+    color: #fe4918;
+    margin-right: 4px;
+    font-size: 1.4em;
+}
+
+div.detalle-evento{
+    border-bottom: 1px solid #000000;
+}
+
+div.detalle-evento h3{
+    color: #fe4918;
+    font-family: 'oswald', sans-serif;
+    font-size: 1.5em;
+    margin: 10px 0;
+
+}
+
+div.detalle-evento i{
+    font-size: 1.2em;
+    color: #fe4918;
+    margin-right: 10px;
+}
+
+div.detalle-evento p{
+    color: #ffffff;
+}
+
+div.detalle-evento:nth-child(3){
+    border: none;
+}
+
+div a.leer{
+    display: inline-block;
+    margin-top: 50px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2em;
+    background: #fe4918;
+    padding: 8px 25px;
+    border-radius: 6px;
+}
+
+div a.leer:hover{
+    background: #ffffff;
+    color: #fe4918;
+    transition: all .5s ease;
 }
