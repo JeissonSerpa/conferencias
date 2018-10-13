@@ -240,7 +240,7 @@ body{
 
 div.hero{
     background-image: url(../img/encabezado.jpg);
-    height: 100vh;
+    height: 70vh;
     background-position: top center;
     background-size: cover;
 }
@@ -309,6 +309,12 @@ h1.nombre-titulo{
     text-align: center;
 }
 
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 h2{
     font-family: 'oswald', sans-serif;
     font-size: 2.4em;
@@ -372,7 +378,7 @@ p.slogan{
 
 div.barra{
     background: #353535;
-    padding: 10px;
+    padding: px;
 }
 
 @media only screen and (min-width: 768px){
@@ -384,12 +390,12 @@ div.barra{
 div.logo{
     width: 80%;
     float: left;
-    padding-top: 10px;
+    margin: .9% 0;
 
 }
 
 div.logo img{
-    width: 100%;
+    width: 95%;
 }
 
 @media only screen and (min-width:768px){
@@ -402,6 +408,7 @@ div.logo img{
 
 nav.navegacion-principal{
     display: none;
+    margin: 1.7% 0;
 }
 
 nav.navegacion-principal a{
@@ -413,7 +420,6 @@ nav.navegacion-principal a{
     transition: all .4s ease;
     width: 100%;
     display: inline-block;
-    margin: 10px 0;
     text-align: center;
 }
 
@@ -444,7 +450,7 @@ nav.navegacion-principal a:last-child:hover{
 @media only screen and (min-width: 768px){
     nav.navegacion-principal a{
         margin-right: 15px;
-        padding: 15px 5px;
+        padding: 8px 5px;
         display: inline-block;
         width: auto;
     }
@@ -573,3 +579,67 @@ div a.leer:hover{
     color: #fe4918;
     transition: all .5s ease;
 }
+
+.float-right{
+    float: right;
+}
+
+/*Invitados*/
+
+ul.lista-invitados li{
+    float: left;
+}
+
+@media only screen and (min-width: 480px){
+    ul.lista-invitados li{
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    ul.lista-invitados li{
+        width: 33.3%;
+    }
+}
+
+div.invitado{
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 7px;
+}
+
+div.invitado p{
+    position: absolute;
+    bottom: -7%;
+    left: 0;
+    width: 100%;
+    padding: 22px 15px;
+    text-align: left;
+    font-weight: bold;
+    color: #fe4918;
+    font-family: 'oswald', sans-serif;
+    background: rgba(0,0,0,.8);
+    transition: all .5s ease;
+}
+
+/*efecto invitados*/
+
+div.invitado img{
+    width: 100%;
+    filter: grayscale(1);
+    transition: all .3s ease-in-out;
+
+}
+
+div.invitado:hover img{
+    filter: grayscale(0);
+    transform: scale(1.15);
+    transition: all .7s ease;
+}
+
+div.invitado:hover p{
+    bottom: -100px;
+    opacity: 0;
+}
+
