@@ -297,7 +297,7 @@ p.ciudad{
     text-align: center;
 }
 
-h1.nombre-titulo{
+h1{
    font-family: 'PT Sans', sans-serif; 
    font-size: 9.5vw;
    line-height: 1;
@@ -334,7 +334,7 @@ h2::after{
 }
 
 @media only screen and (min-width: 770px){
-    h1.nombre-titulo{
+    h1{
         font-size: 7.5vw;
     }
 }
@@ -371,7 +371,7 @@ p.slogan{
 }
 
 .seccion{
-    padding: 30px 0;
+    padding: 5px 0 45px 0;
 }
 
 /*Barra*/
@@ -599,7 +599,25 @@ div a.leer:hover{
     color: #fe4918;
     transition: all .5s ease;
     border: solid 1px #fe4918;
+}
 
+div a.leer.transparencia{
+    display: inline-block;
+    margin-top: 50px;
+    text-decoration: none;
+    color: #fe4918;
+    font-weight: bold;
+    font-size: 1.2em;
+    background: transparent;
+    padding: 8px 25px;
+    border-radius: 6px;
+    border: solid 1px #ffffff;
+}
+
+div a.leer.transparencia:hover{
+    background: #fe4918;
+    color: #ffffff;
+    transition: all .5s ease;
 }
 
 .float-right{
@@ -787,7 +805,7 @@ div.tabla-precio ul li::before{
 /*Testimonios*/
 
 div.Contenedor-testimonios{
-    padding: 20px 0;
+    margin: 0 0 30px 0;
 }
 
 blockquote.conten-testimonio{
@@ -813,6 +831,10 @@ blockquote.conten-testimonio p::before{
     top: -6px;
     font-size: 70px;
     color: #fe4918;
+}
+
+div.testimonios{
+    margin-bottom: 10px;
 }
 
 
@@ -842,6 +864,107 @@ footer.info-testimonial cite{
 footer.info-testimonial span{
     display: block;
     color: rgba(0,0,0,.7);
-    font-size: .9em;
+    font-size: .8em;
     font-style: normal;
 }
+
+/*Seccion de registro*/
+
+div.newsletter{
+    position: relative;
+    height: auto;
+}
+
+div.newsletter::before{
+    background-image: url(../img/bg-newsletter.jpg);
+    background-position: bottom center;
+    content: '';
+}
+
+div.newsletter .contenido{
+    padding: 50px 0;
+    position: relative;
+    text-align: center;
+    color: #ECECEC;
+    text-shadow: 0 0 9px #000000;
+    text-transform: uppercase;
+}
+
+div.newsletter .contenido p{
+    text-transform: lowercase;
+    font-size: 1.2em
+}
+
+/*Cuenta regreciva*/
+
+div.cuenta-regreciva ul li{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.6em;
+    font-family: 'Oswald', sans-serif;
+}
+
+@media only screen and (min-width: 768px){
+    div.cuenta-regreciva ul li{
+        float: left;
+        width: 25%;
+    }
+}
+
+/*footer*/
+
+footer.site-footer{
+    background: #353535;
+    margin-top: 20px;
+    padding: 30px 0 0 0;
+
+}
+
+@media only screen and (min-width: 768px){
+    div.footer-informacion{
+        float: left;
+        width: 33.3%;
+        
+    }    
+}
+
+div.footer-informacion{
+    color: #ffffff;
+    font-size: 12px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+div.margen-float{
+    margin: 0 15px;
+}
+
+footer h3{
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+}
+
+footer span{
+    color: #fe4918;
+}
+
+footer ul li{
+    margin-bottom: 6px;
+}
+
+footer nav.redes-sociales{
+    text-align: left;
+}
+
+p.derechos{
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    background: rgba(34,34,34,.5);
+    font-size: 14px;
+    color: rgba(255,255,255,.6);
+    font-family: serif geneva verdana;
+}
+
+/*fin de pagina inicial*/
