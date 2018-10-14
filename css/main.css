@@ -348,7 +348,7 @@ p.slogan{
 }
 
 .contenedor{
-    width: 95%;
+    width: 92%;
     margin: 0 auto;
 }
 
@@ -540,11 +540,12 @@ div.detalle-evento{
     border-bottom: 1px solid #000000;
 }
 
-div.detalle-evento h3{
+h3{
     color: #fe4918;
     font-family: 'oswald', sans-serif;
     font-size: 1.5em;
     margin: 10px 0;
+    text-transform: uppercase;
 
 }
 
@@ -560,6 +561,25 @@ div.detalle-evento p{
 
 div.detalle-evento:nth-child(3){
     border: none;
+}
+
+div a.leer.hollow{
+    display: inline-block;
+    margin-top: 50px;
+    text-decoration: none;
+    color: #fe4918;
+    font-weight: bold;
+    font-size: 1.2em;
+    background: #ffffff;
+    padding: 8px 25px;
+    border-radius: 6px;
+    border: solid 1px #fe4918;
+}
+
+div a.leer.hollow:hover{
+    background: #fe4918;
+    color: #ffffff;
+    transition: all .5s ease;
 }
 
 div a.leer{
@@ -578,6 +598,8 @@ div a.leer:hover{
     background: #ffffff;
     color: #fe4918;
     transition: all .5s ease;
+    border: solid 1px #fe4918;
+
 }
 
 .float-right{
@@ -611,10 +633,11 @@ div.invitado{
 
 div.invitado p{
     position: absolute;
-    bottom: -7%;
+    bottom: -11.5%;
+    top: %;
     left: 0;
     width: 100%;
-    padding: 22px 15px;
+    padding: 7% 15px;
     text-align: left;
     font-weight: bold;
     color: #fe4918;
@@ -643,3 +666,182 @@ div.invitado:hover p{
     opacity: 0;
 }
 
+/*Evento contador*/
+
+.parallax::before{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+div.contador{
+    position: relative;
+    height: auto;
+}
+
+div.contador::before{
+    background-image: url(../img/bg-resumen.jpg);
+    content: '';
+}
+
+ul.resumen-evento{
+    position: relative;
+    padding: 90px 0;
+}
+
+ul.resumen-evento li{
+    width: 50%;
+    float: left;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+@media only screen and (min-width: 768px){
+    ul.resumen-evento li{
+        width: 25%;
+    }
+}
+
+div p.numero{
+    font-size: 4em;
+    display: block;
+    margin: 0 0 10px 0;
+    color: #fe4918;
+}
+
+/*Lista de precios*/
+
+ul.lista-precios{
+    text-align: center;
+}
+
+ul li div.tabla-precio{
+    margin: 10px;
+    padding: 20px 0;
+    border: 1px solid #e1e1e1;
+    background: #ffffff;
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+    transition: all .3s ease;
+}
+
+ul li div.tabla-precio:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 50px #667777;
+    border: solid 1px #fe4918;
+}
+
+@media only screen and (min-width: 768px){
+    ul.lista-precios > li{
+        float: left;
+        width: 33.33%;
+    }
+}
+
+div.tabla-precio ul li{
+    font-family: ont-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    margin: 30px 0;
+    text-transform: uppercase;
+    color: #868686;
+    line-height: 17px;
+}
+
+div a.leer{
+    margin-top: 25px;
+}
+
+div a.leer.hollow{
+    margin-top: 25px;
+}
+
+div.tabla-precio ul li::before{
+    font-family: 'FontAwesome';
+    display: inline-block;
+    vertical-align: center;
+    padding: 0 5px;
+    font-size: 20px;
+    color: green;
+    -webkit-font-smoothing:antialiased;
+    -moz-font-smoothing:antialiased;
+    -o-font-smoothing:antialiased;
+    content: '\f00c';
+}
+
+/*Mapa*/
+
+.mapa{
+    height: 420px;
+    width: 100%;
+    background: grey;
+}
+
+/*Testimonios*/
+
+div.Contenedor-testimonios{
+    padding: 20px 0;
+}
+
+blockquote.conten-testimonio{
+    margin: 0 15px;
+    border: solid 1px #e1e1e1;
+    background: #ffffff;
+    box-shadow: 0 0 6px #667777;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+blockquote.conten-testimonio p{
+    text-align: justify;
+    font-size: 1em;
+    padding: 0 20px 0 50px;
+    font-weight: normal;
+}
+
+blockquote.conten-testimonio p::before{
+    content: '\201c';
+    position: absolute;
+    left: 19px;
+    top: -6px;
+    font-size: 70px;
+    color: #fe4918;
+}
+
+
+
+@media only screen and (min-width: 768px){
+    div.testimonios{
+        float: left;
+        width: 33.3%;
+    }
+}
+
+footer.info-testimonial img{
+    float: left;
+    width: 20%;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+footer.info-testimonial cite{
+    display: inline-block;
+    padding: 10px 0 0 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fe4918;
+}
+
+footer.info-testimonial span{
+    display: block;
+    color: rgba(0,0,0,.7);
+    font-size: .9em;
+    font-style: normal;
+}
