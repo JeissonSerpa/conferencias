@@ -390,17 +390,20 @@ div.barra{
 div.logo{
     width: 80%;
     float: left;
-    margin: .9% 0;
+    margin-top:5px;
 
 }
 
 div.logo img{
-    width: 95%;
+    width: 100%;
 }
 
 @media only screen and (min-width:768px){
     div.logo{
-        width: 35%;
+        width: 40%;
+    }
+   div.logo img{
+        width: 50%;
     }
 }
 
@@ -408,7 +411,7 @@ div.logo img{
 
 nav.navegacion-principal{
     display: none;
-    margin: 1.7% 0;
+    margin-top:  .2%;
 }
 
 nav.navegacion-principal a{
@@ -612,6 +615,7 @@ div a.leer.transparencia{
     padding: 8px 25px;
     border-radius: 6px;
     border: solid 1px #ffffff;
+    transition: all .5s ease;
 }
 
 div a.leer.transparencia:hover{
@@ -784,13 +788,9 @@ div a.leer.hollow{
 div.tabla-precio ul li::before{
     font-family: 'FontAwesome';
     display: inline-block;
-    vertical-align: center;
     padding: 0 5px;
     font-size: 20px;
     color: green;
-    -webkit-font-smoothing:antialiased;
-    -moz-font-smoothing:antialiased;
-    -o-font-smoothing:antialiased;
     content: '\f00c';
 }
 
