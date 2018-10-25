@@ -412,7 +412,8 @@ div.logo img{
 nav.navegacion-principal{
     display: none;
     margin-top:  .2%;
-}
+    margin-bottom:  .2%;
+}   
 
 nav.navegacion-principal a{
     text-decoration: none;
@@ -566,7 +567,7 @@ div.detalle-evento:nth-child(3){
     border: none;
 }
 
-div a.leer.hollow{
+.leer.hollow{
     display: inline-block;
     margin-top: 50px;
     text-decoration: none;
@@ -579,13 +580,13 @@ div a.leer.hollow{
     border: solid 1px #fe4918;
 }
 
-div a.leer.hollow:hover{
+.leer.hollow:hover{
     background: #fe4918;
     color: #ffffff;
     transition: all .5s ease;
 }
 
-div a.leer{
+.leer{
     display: inline-block;
     margin-top: 50px;
     text-decoration: none;
@@ -593,18 +594,19 @@ div a.leer{
     font-weight: bold;
     font-size: 1.2em;
     background: #fe4918;
+    border: solid 1px #ffffff;
     padding: 8px 25px;
     border-radius: 6px;
 }
 
-div a.leer:hover{
+.leer:hover{
     background: #ffffff;
     color: #fe4918;
     transition: all .5s ease;
     border: solid 1px #fe4918;
 }
 
-div a.leer.transparencia{
+.leer.transparencia{
     display: inline-block;
     margin-top: 50px;
     text-decoration: none;
@@ -618,7 +620,7 @@ div a.leer.transparencia{
     transition: all .5s ease;
 }
 
-div a.leer.transparencia:hover{
+.leer.transparencia:hover{
     background: #fe4918;
     color: #ffffff;
     transition: all .5s ease;
@@ -777,11 +779,11 @@ div.tabla-precio ul li{
     line-height: 17px;
 }
 
-div a.leer{
+leer{
     margin-top: 25px;
 }
 
-div a.leer.hollow{
+leer.hollow{
     margin-top: 25px;
 }
 
@@ -968,3 +970,116 @@ p.derechos{
 }
 
 /*fin de pagina inicial*/
+
+/*estilos a la pagina registro*/
+
+form.registro h3{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+form.registro label{
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form h4{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-bottom: 1px solid #fe4918;
+}
+
+div.caja{
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    padding: 15px;
+}
+
+div.campo{
+    padding: 20px 0;
+}
+
+@media only screen and (min-width: 768px){
+    div.campo{
+        float: left;
+        width: 33.3%;
+    }
+}
+
+div.paquetes .tabla-precio{
+    box-shadow: none;
+}
+
+div.paquetes .tabla-precio:hover{
+    transform: none;
+    box-shadow: none;
+}
+
+div.paquetes .tabla-precio input{
+    clear: both;
+    width: 9%;
+    margin: 10px auto 0 auto;
+    display: block;
+    padding: 5px;
+}
+
+.contenido-dia{
+    padding: 0 20px 20px 20px;
+    /*display: none;*/
+}
+
+@media only screen and (min-width:768px){
+    .contenido-dia > div{
+        float: left;
+        width: 30%;
+        padding: 0 1.1%;
+        text-align:left;
+    }
+}
+
+.contenido-dia > div label{
+    display: block;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contenido-dia > div input{
+    margin-right: 10px;
+}
+
+.contenido-dia > div time{
+    color: #fe4918;
+    font-weight: bold;  
+}
+
+/*Estilos para el resumen*/
+
+div.resumen p{
+    font-size: 1.3em;
+    text-transform: uppercase;
+}
+
+div.resumen div.extras{
+    float: left;
+    width: 45.5%;
+    padding: .5%;
+}
+
+div.extras div.orden{
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+div.extras div.orden input{
+    display: block;
+    margin: 15px
+}
+
+div.resumen input{
+    display: block;
+    margin: 20px auto;
+}
