@@ -390,8 +390,8 @@ div.barra{
 div.logo{
     width: 80%;
     float: left;
-    margin-top:5px;
-
+    margin-top:  7px;
+    margin-bottom:  7px;
 }
 
 div.logo img{
@@ -411,8 +411,8 @@ div.logo img{
 
 nav.navegacion-principal{
     display: none;
-    margin-top:  .2%;
-    margin-bottom:  .2%;
+    margin-top:  .5%;
+    margin-bottom:  .5%;
 }   
 
 nav.navegacion-principal a{
@@ -1029,7 +1029,7 @@ div.paquetes .tabla-precio input{
 
 .contenido-dia{
     padding: 0 20px 20px 20px;
-    /*display: none;*/
+    display: none;
 }
 
 @media only screen and (min-width:768px){
@@ -1066,12 +1066,16 @@ div.resumen p{
 div.resumen div.extras{
     float: left;
     width: 45.5%;
-    padding: .5%;
+    padding: 45px .5%;
 }
 
 div.extras div.orden{
     text-align: left;
     margin-bottom: 30px;
+}
+
+div.extras div.orden label{
+    padding: 30px;
 }
 
 div.extras div.orden input{
@@ -1082,4 +1086,24 @@ div.extras div.orden input{
 div.resumen input{
     display: block;
     margin: 20px auto;
+}
+
+#lista-productos{
+    background: #e1e1e1;
+    padding: 20px 100px;
+    display: none;
+
+}
+
+#suma-total{
+    text-align: center;
+    font-size: 2.6em;
+    color: #fe4918;
+}
+
+#error{
+    display: none;
+    clear: both;
+    text-align: center;
+    text-transform: uppercase;
 }

@@ -47,7 +47,7 @@
 	<div class="barra"><!--barra-->
 		<div class="contenedor clearfix"><!--contenedor barra-->
 			<div class="logo">
-				<img src="img/logo.svg" alt="logo principal">
+				<a href="index.html"><img src="img/logo.svg" alt="logo principal"></a>
 			</div>
 
 			<div class="menu-movil">
@@ -75,8 +75,8 @@
 									<input type="text" id="nombre" name="nombre" placeholder="Ingresa tu Nombre">
 								</div>
 								<div class="campo">
-										<label for="apellido">Apellidos:</label>
-										<input type="text" id="Apellidos" name="Apellidos" placeholder="Ingresa tus Apellidos">
+										<label for="apellidos">Apellidos:</label>
+										<input type="text" id="apellidos" name="apellidos" placeholder="Ingresa tus Apellidos">
 								</div>
 								<div class="campo">
 										<label for="email">Correo:</label>
@@ -225,8 +225,8 @@
 							
 							<div id="resumen" class="resumen">
 								<h3>Pago y Extras</h3>
-								<div class="caja clearfix">
-									<div class="contenedor">
+								<div class="caja">
+									<div class="contenedor clearfix">
 										<div class="extras">
 											<div class="orden">
 												<label for="Camisa">Camisa del evento $10.000 <small>(Promocion 10% de dto.)</small></label>
@@ -234,14 +234,14 @@
 											</div>
 
 											<div class="orden">
-													<label for="Etiquetas">Etiquetas del Evento <small>(Promocion 5% de dto.)</small></label>
+													<label for="Etiquetas">Etiquetas del Evento $5.000 <small>(Promocion 5% de dto.)</small></label>
 													<input type="number" min="0" id="etiquetas" size="3" placeholder="0">
 											</div>
 
 											<div class="orden">
 													<label for="regalo">Seleccione su Regalo:</label>
 													<select id="regalo" required>
-														<option value="">Selecione un Regalo</option>
+														<option value="">-Selecione un Regalo--</option>
 														<option value="eti">Etiquetas</option>
 														<option value="pul">Pulseras</option>
 														<option value="lap">Lapiz</option>
