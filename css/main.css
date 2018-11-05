@@ -1092,7 +1092,7 @@ div.resumen input{
     background: #e1e1e1;
     padding: 20px 100px;
     display: none;
-
+    border-radius: 5px;
 }
 
 #suma-total{
