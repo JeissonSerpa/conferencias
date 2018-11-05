@@ -2,6 +2,7 @@
   "use strict";
   document.addEventListener('DOMContentLoaded', function(){
 
+<<<<<<< HEAD
     var mapa = L.map('mapa').setView([4.658042, -74.094372], 16);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -11,6 +12,17 @@
 L.marker([4.658042, -74.094372]).addTo(mapa)
     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
     .openPopup();
+=======
+//     var mapa = L.map('mapa').setView([4.658042, -74.094372], 16);
+
+//     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+//     }).addTo(mapa);
+
+// L.marker([4.658042, -74.094372]).addTo(mapa)
+//     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+//     .openPopup();
+>>>>>>> agregando ajuste para mostrar u ocultar dias
 
     //Formulario
     let nombre = document.getElementById('nombre');
@@ -63,6 +75,7 @@ L.marker([4.658042, -74.094372]).addTo(mapa)
       let boletoDia = parseInt(paseDia.value, 10) || 0,
           boletoDosDias = parseInt(paseDosDias.value, 10) || 0,
           boletoCompleto = parseInt(paseCompleto.value, 10) || 0;
+<<<<<<< HEAD
       
       let diasElegidos = [];
 
@@ -79,6 +92,39 @@ L.marker([4.658042, -74.094372]).addTo(mapa)
       for (let i = 0; i < diasElegidos.length; i++) {
         document.getElementById(diasElegidos[i]).style.display = "block";
         
+=======
+
+      let diasElegidos = [];
+      if(this.value > 0){
+
+        if(boletoDia > 0){
+          diasElegidos.push('viernes');
+        }
+        if(boletoDosDias > 0){
+          diasElegidos.push('viernes', 'sabado');
+        }
+        if(boletoCompleto > 0){
+          diasElegidos.push('viernes', 'sabado', 'domingo');
+        }
+
+        for (let i = 0; i < diasElegidos.length; i++) {
+          document.getElementById(diasElegidos[i]).style.display = "block";
+        }
+      }else{
+
+        if(boletoDia == 0){
+          diasElegidos.push('viernes');
+        }
+        if(boletoDosDias == 0){
+          diasElegidos.push('viernes', 'sabado');
+        }
+        if(boletoCompleto == 0){
+          diasElegidos.push('viernes', 'sabado', 'domingo');
+        }
+        for (let i = 0; i < diasElegidos.length; i++) {
+            document.getElementById(diasElegidos[i]).style.display = "none";
+        }
+>>>>>>> agregando ajuste para mostrar u ocultar dias
       }
     }
 
