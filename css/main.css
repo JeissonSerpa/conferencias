@@ -523,7 +523,6 @@ nav.menu-programa{
     display: table;
     width: 100%;
     border-bottom: 1px solid #fe4918;
-    padding-bottom: 10px;
 }
 
 nav.menu-programa a{
@@ -532,6 +531,23 @@ nav.menu-programa a{
     color: #ffffff;
     text-decoration: none;
     font-size: 1.2em;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+nav.menu-programa a.activo::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: -20px;
+    height: 20px;
+    width: 30px;
+    background-image: url('../img/talleres-flecha.png');
+    background-position: top center;
+    background-repeat: no-repeat;
 }
 
 nav.menu-programa i{
@@ -594,7 +610,7 @@ div.detalle-evento:nth-child(3){
     font-weight: bold;
     font-size: 1.2em;
     background: #fe4918;
-    border: solid 1px #ffffff;
+    border: solid 1px rgba(250, 250, 250, .3);
     padding: 8px 25px;
     border-radius: 6px;
 }
@@ -628,6 +644,10 @@ div.detalle-evento:nth-child(3){
 
 .float-right{
     float: right;
+}
+
+div.ocultar{
+    display: none;
 }
 
 /*Invitados*/
@@ -801,7 +821,6 @@ div.tabla-precio ul li::before{
 .mapa{
     height: 420px;
     width: 100%;
-    background: grey;
 }
 
 /*Testimonios*/

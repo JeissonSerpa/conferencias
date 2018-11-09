@@ -2,15 +2,16 @@
   "use strict";
   document.addEventListener('DOMContentLoaded', function(){
 
-    var mapa = L.map('mapa').setView([4.658042, -74.094372], 16);
+    var map = L.map('mapa').setView([4.658042, -74.094372], 16);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(mapa);
+      }).addTo(map);
 
-L.marker([4.658042, -74.094372]).addTo(mapa)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
+      L.marker([4.658042, -74.094372]).addTo(map)
+      .bindPopup('Ubicacion Oficial GDLWebcamp.<br> Encuentranos en Bogota.')
+      .openPopup()
+      .bindTooltip('Simon Volibar');
 
     //Formulario
     let nombre = document.getElementById('nombre');
@@ -125,7 +126,7 @@ L.marker([4.658042, -74.094372]).addTo(mapa)
           }
 
           sumaTotal.innerHTML = '';
-          sumaTotal.innerHTML += '$ ' + totalProductos.toFixed(2);
+          sumaTotal.innerHTML += '$ ' + totalProductos.toFixesd(2);
       }
         
       }
@@ -134,3 +135,21 @@ L.marker([4.658042, -74.094372]).addTo(mapa)
   });//DOM Content
 
 })();
+
+//Programa para las conferencias
+$(function(){
+
+  $('.programa-evento .info-curso:first').show(); //muestra el primer elemento de los eventos
+
+  $('.menu-programa a').on('click', mostrarProgramas); //escucha por click
+  $('.menu-programa a:first').addClass('activo');
+  function mostrarProgramas(){
+    let enlace = $(this).attr('href');
+    $('.menu-programa a').removeClass('activo');
+    $(this).addClass('activo');
+    $('.ocultar').hide();
+    $(enlace).fadeIn(700);
+    return false;
+  }
+
+});
