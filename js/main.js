@@ -2,6 +2,7 @@
   "use strict";
   document.addEventListener('DOMContentLoaded', function(){
 
+<<<<<<< HEAD
     var map = L.map('mapa').setView([4.658042, -74.094372], 16);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -12,6 +13,17 @@
       .bindPopup('Ubicacion Oficial GDLWebcamp.<br> Encuentranos en Bogota.')
       .openPopup()
       .bindTooltip('Simon Volibar');
+=======
+//     var mapa = L.map('mapa').setView([4.658042, -74.094372], 16);
+
+//     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+//     }).addTo(mapa);
+
+// L.marker([4.658042, -74.094372]).addTo(mapa)
+//     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+//     .openPopup();
+>>>>>>> d46dc0866bf2505ce3fa3be83c1da00d08085431
 
     //Formulario
     let nombre = document.getElementById('nombre');
@@ -64,22 +76,37 @@
       let boletoDia = parseInt(paseDia.value, 10) || 0,
           boletoDosDias = parseInt(paseDosDias.value, 10) || 0,
           boletoCompleto = parseInt(paseCompleto.value, 10) || 0;
-      
+
       let diasElegidos = [];
+      if(this.value > 0){
 
-      if(boletoDia > 0){
-        diasElegidos.push('viernes');
-      }
-      if(boletoDosDias > 0){
-        diasElegidos.push('viernes', 'sabado');
-      }
-      if(boletoCompleto > 0){
-        diasElegidos.push('viernes', 'sabado', 'domingo');
-      }
+        if(boletoDia > 0){
+          diasElegidos.push('viernes');
+        }
+        if(boletoDosDias > 0){
+          diasElegidos.push('viernes', 'sabado');
+        }
+        if(boletoCompleto > 0){
+          diasElegidos.push('viernes', 'sabado', 'domingo');
+        }
 
-      for (let i = 0; i < diasElegidos.length; i++) {
-        document.getElementById(diasElegidos[i]).style.display = "block";
-        
+        for (let i = 0; i < diasElegidos.length; i++) {
+          document.getElementById(diasElegidos[i]).style.display = "block";
+        }
+      }else{
+
+        if(boletoDia == 0){
+          diasElegidos.push('viernes');
+        }
+        if(boletoDosDias == 0){
+          diasElegidos.push('viernes', 'sabado');
+        }
+        if(boletoCompleto == 0){
+          diasElegidos.push('viernes', 'sabado', 'domingo');
+        }
+        for (let i = 0; i < diasElegidos.length; i++) {
+            document.getElementById(diasElegidos[i]).style.display = "none";
+        }
       }
     }
 
