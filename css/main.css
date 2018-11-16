@@ -918,7 +918,7 @@ div.newsletter .contenido p{
 
 /*Cuenta regreciva*/
 
-div.cuenta-regreciva ul li{
+div.cuenta-regresiva ul li{
     text-align: center;
     text-transform: uppercase;
     font-size: 1.6em;
@@ -926,7 +926,7 @@ div.cuenta-regreciva ul li{
 }
 
 @media only screen and (min-width: 768px){
-    div.cuenta-regreciva ul li{
+    div.cuenta-regresiva ul li{
         float: left;
         width: 25%;
     }

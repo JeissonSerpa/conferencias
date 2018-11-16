@@ -2,25 +2,25 @@
   "use strict";
   document.addEventListener('DOMContentLoaded', function(){
 
-    var map = L.map('mapa').setView([4.658042, -74.094372], 16);
+   var map = L.map('mapa').setView([4.658042, -74.094372], 16);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
+   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+     }).addTo(map);
 
-      L.marker([4.658042, -74.094372]).addTo(map)
-      .bindPopup('Ubicacion Oficial GDLWebcamp.<br> Encuentranos en Bogota.')
-      .openPopup()
-      .bindTooltip('Simon Volibar');
-    var mapa = L.map('mapa').setView([4.658042, -74.094372], 16);
+     L.marker([4.658042, -74.094372]).addTo(map)
+     .bindPopup('Ubicacion Oficial GDLWebcamp.<br> Encuentranos en Bogota.')
+     .openPopup()
+     .bindTooltip('Simon Volibar');
+   var mapa = L.map('mapa').setView([4.658042, -74.094372], 16);
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(mapa);
+     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+   }).addTo(mapa);
 
-    L.marker([4.658042, -74.094372]).addTo(mapa)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
+   L.marker([4.658042, -74.094372]).addTo(mapa)
+   .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+   .openPopup();
 
     //Formulario
     let nombre = document.getElementById('nombre');
@@ -150,7 +150,7 @@
           }
 
           sumaTotal.innerHTML = '';
-          sumaTotal.innerHTML += '$ ' + totalProductos.toFixesd(2);
+          sumaTotal.innerHTML += '$ ' + totalProductos.toFixed(2);
       }
         
       }
@@ -163,17 +163,38 @@
 //Programa para las conferencias
 $(function(){
 
-  $('.programa-evento .info-curso:first').show(); //muestra el primer elemento de los eventos
+  //Programa para las conferencias
 
-  $('.menu-programa a').on('click', mostrarProgramas); //escucha por click
-  $('.menu-programa a:first').addClass('activo');
-  function mostrarProgramas(){
-    let enlace = $(this).attr('href');
-    $('.menu-programa a').removeClass('activo');
+  $('.programa-evento a:first').addClass('activo');
+  $('.ocultar:first').show();
+
+  $('.programa-evento a').on('click', tabularEvento);
+
+  function tabularEvento(){
+    $('.programa-evento a').removeClass('activo');
     $(this).addClass('activo');
     $('.ocultar').hide();
+    let  enlace = $(this).attr('href');
     $(enlace).fadeIn(700);
+
     return false;
   }
+
+  //Programa para animar numeros
+
+  $('.resumen-evento li:nth-child(1) p').animateNumber({number: 6}, 1000);
+  $('.resumen-evento li:nth-child(2) p').animateNumber({number: 15}, 1000);
+  $('.resumen-evento li:nth-child(3) p').animateNumber({number: 3}, 1000);
+  $('.resumen-evento li:nth-child(4) p').animateNumber({number: 9}, 1000);
+
+  //programa Contador 
+
+  $('.cuenta-regresiva').countdown('2018/12/31 23:59:59', function(event){
+    $('#dias').html(event.strftime('%D'));
+    $('#horas').html(event.strftime('%H'));
+    $('#minutos').html(event.strftime('%M'));
+    $('#segundos').html(event.strftime('%S'));
+  });
+
 
 });
