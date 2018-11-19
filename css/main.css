@@ -348,7 +348,12 @@ p.slogan{
 }
 
 .contenedor{
-    width: 92%;
+    width: 86%;
+    margin: 0 auto;
+}
+
+.contenedor-galeria{
+    width: 65%;
     margin: 0 auto;
 }
 
@@ -360,7 +365,7 @@ p.slogan{
 
 @media only screen and(min-width: 768px){
     .contenedor{
-        width: 90%;
+        width: 95%;
     }
 }
 
@@ -375,6 +380,13 @@ p.slogan{
 }
 
 /*Barra*/
+
+.fixed{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+}
 
 div.barra{
     background: #353535;
@@ -411,8 +423,9 @@ div.logo img{
 
 nav.navegacion-principal{
     display: none;
-    margin-top:  .5%;
+    margin-top:  .6%;
     margin-bottom:  .5%;
+    width: 100%;
 }   
 
 nav.navegacion-principal a{
@@ -445,7 +458,7 @@ nav.navegacion-principal a:last-child:hover{
 @media only screen and (min-width: 768px){
     nav.navegacion-principal{
         float: right;
-        width: 65;
+        width: 60%;
         display: block;
         text-align: right;
     }
@@ -465,7 +478,7 @@ div.menu-movil{
     display: block;
     float: right;
     text-align: right;
-    margin-top: 2%;
+    margin-top: 4.2%;
 }
 
 div.menu-movil:hover{
@@ -975,7 +988,7 @@ footer ul li{
 }
 
 footer nav.redes-sociales{
-    text-align: left;
+    text-align: center;
 }
 
 p.derechos{
@@ -1125,4 +1138,36 @@ div.resumen input{
     clear: both;
     text-align: center;
     text-transform: uppercase;
+}
+
+/*Estilo a las Conferencias*/
+
+.galeria{
+    float: left;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.galeria img{
+    border-radius: 7px;
+}
+
+@media only screen and (min-width: 480px){
+    .galeria{
+        width: 50%;
+    }
+    .galeria img{
+        width: 95%;
+
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .galeria{
+        width: 20%;
+    }
+    .galeria img{
+        width: 90%;
+
+    }
 }

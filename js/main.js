@@ -2,6 +2,8 @@
   "use strict";
   document.addEventListener('DOMContentLoaded', function(){
 
+  if(document.getElementById('mapa')){
+
    var map = L.map('mapa').setView([4.658042, -74.094372], 16);
 
    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -21,6 +23,7 @@
    L.marker([4.658042, -74.094372]).addTo(mapa)
    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
    .openPopup();
+  }
 
     //Formulario
     let nombre = document.getElementById('nombre');
@@ -46,6 +49,7 @@
 
     //Evento validacion formulario
 
+    if(nombre){
     nombre.addEventListener('blur', validarFormulario);
     apellidos.addEventListener('blur', validarFormulario);
     email.addEventListener('blur', validarFormulario);
@@ -61,8 +65,11 @@
         this.style.border = '1px solid #cccccc';
       }
     }
+  }
 
     //Eventos de usuario
+
+    if(calcular){
     calcular.addEventListener('click', calcularM);
     paseDia.addEventListener('blur', mostrarDias);
     paseDosDias.addEventListener('blur', mostrarDias);
@@ -106,6 +113,7 @@
         }
       }
     }
+  }
 
     //funcion para de resumen y total de compras
     function calcularM(event){
@@ -160,8 +168,33 @@
 
 })();
 
-//Programa para las conferencias
 $(function(){
+
+  //Programa para dejar estatico la barra de menu
+
+  let altura = $('.barra').offset().top;
+  let barraAltura = $('.barra').innerHeight();
+  
+  $(window).scroll(function(){
+    let scroll = $(window).scrollTop();
+
+    if(scroll > altura){
+      $('.barra').addClass('fixed');
+      $('body').css({'margin-top': barraAltura + 'px'})
+    }else{
+      $('.barra').removeClass('fixed');
+      $('body').css({'margin-top': '0px'})
+    }
+
+  });
+
+  //Programa menu movil
+
+  $('.menu-movil').on('click', mostrarMenu);
+
+  function mostrarMenu(){
+    $('.navegacion-principal').slideToggle();
+  }
 
   //Programa para las conferencias
 
