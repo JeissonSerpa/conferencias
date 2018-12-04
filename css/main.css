@@ -1171,3 +1171,46 @@ div.resumen input{
 
     }
 }
+
+.calendario h3{
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+div div.dia{
+    width: 100%;
+    margin: 0 1% 20px 1%;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    transition: all .2s ease;
+    background: #ffffff;
+}
+
+@media only screen and (min-width: 929px){
+    div div.dia{
+        width: 31%;
+        float: left;
+    }
+}
+
+div div.dia:hover{
+    background: #e1e1e1;
+    border-radius: 10px;
+    -webkit-transform: scale(1.1);
+}
+
+div.dia p.titulo{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+div.dia:hover p.titulo{
+    color: #fe4918;
+}
+
+div.dia i{
+    color: #fe4918;
+    font-size: 1.2em;
+}

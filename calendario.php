@@ -7,7 +7,7 @@
       try{
 
         require_once('includes/funciones/conexion.php');
-        $sql = "SELECT nombre_evento, fecha_evento, hora_evento, cat_evento, nombre, apellido FROM eventos 
+        $sql = "SELECT nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre, apellido FROM eventos 
                 LEFT JOIN categoriaEvento ON id_cat_evento = id_categoria
                 LEFT JOIN invitados ON id_invi = id_invitado";
         $consulta = $conn->query($sql);
@@ -17,7 +17,7 @@
       } 
     ?>
 
-    <div class="calendario">
+    <div class="calendario clearfix">
       <?php
         $calendario = [];
         while($row = $consulta->fetch_assoc()){
@@ -29,6 +29,7 @@
             'fecha' => $row['fecha_evento'],
             'hora' => $row['hora_evento'],
             'categoria' => $row['cat_evento'],
+            'icono' => $row['icono'],
             'nombre' => $row['nombre']. ' ' .$row['apellido']
           ];
 
@@ -40,15 +41,16 @@
         setlocale(LC_TIME, 'spanish');
 
         foreach($calendario as $dia => $listaEventos){
-          echo utf8_encode("<h3> <i class= 'fas fa-calendar-alt'></i>".' '.
-          strftime('%A, %d de %B del %Y', strtotime($dia))."</h3>");
+          echo "<h3> <i class= 'fas fa-calendar-alt'></i>".' '.
+          utf8_encode(strftime('%A, %d de %B del %Y', strtotime($dia))."</h3>");
         
          foreach($listaEventos as $evento){
-          echo utf8_encode("<div class='dia'>
+          echo "<div class='dia'>
                   <p class='titulo'>". $evento['titulo'] ."</p>
-                  <p class='hora'><i class='fas fa-clock' arial-hidden='true'></i>". $evento['hora'] ."</p>
-                  <p class='categoria'>". $evento['categoria'] ."</p>
-                  <p class='invitado'><i class='fas fa-user' arial-hidden='true'></i>". $evento['nombre'] ."</p>");
+                  <p class='hora'><i class='fas fa-clock' arial-hidden='true'></i> ". $evento['hora'] ."</p>
+                  <p class='categoria'><i class='fas " . $evento['icono'] . "' arial-hidden='true'></i> ". $evento['categoria'] ."</p>
+                  <p class='invitado'><i class='fas fa-user' arial-hidden='true'></i> ". $evento['nombre'] ."</p>
+                </div>";
          }
         }
       ?>
