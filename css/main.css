@@ -240,7 +240,7 @@ body{
 
 div.hero{
     background-image: url(../img/encabezado.jpg);
-    height: 70vh;
+    height: 50vh;
     background-position: top center;
     background-size: cover;
 }
@@ -1107,7 +1107,7 @@ div.extras div.orden{
 }
 
 div.extras div.orden label{
-    padding: 30px;
+    padding: 15px;
 }
 
 div.extras div.orden input{
@@ -1172,6 +1172,8 @@ div.resumen input{
     }
 }
 
+/*Estilos a la pagina de Calendario*/
+
 .calendario h3{
     text-align: center;
     padding: 20px 0 20px 0;
@@ -1213,4 +1215,18 @@ div.dia:hover p.titulo{
 div.dia i{
     color: #fe4918;
     font-size: 1.2em;
+}
+
+/*Estilos a la pagina de Invitados*/
+
+div.invitados-none{
+    display: none;
+}
+
+div.invitados-info{
+    text-align: center;
+}
+
+div.invitados-info img{
+    width: 80%;
 }

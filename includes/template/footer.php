@@ -50,6 +50,7 @@
   	<script src="js/vendor/modernizr-3.6.0.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 		<script src="js/jquery.animateNumber.min.js"></script>
+		<script src="js/jquery.colorbox-min.js"></script>
 		<script src="js/lightbox.js"></script>
 		<script src="js/jquery.countdown.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>

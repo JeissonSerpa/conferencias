@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
     <link rel="apple-touch-icon" href="icon.png">
 		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/colorbox.css">
 		<link rel="stylesheet" href="css/lightbox.css">
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
     <link rel="stylesheet" href="css/main.css">
@@ -36,7 +37,7 @@
 						<p class="fecha"><i class="fas fa-calendar-alt"></i> Fecha</p>
 						<p class="ciudad"><i class="fas fa-map-marker-alt"></i> Bogota, Colombia</p>
 					</div>
-					<h1>GDLWEBCAMP</h1>
+					<h1>GDLWEBCAM</h1>
 					<p class="slogan">La mejor conferencia de <span>Diseño Web</span></p>
 				</div>
 			</div>

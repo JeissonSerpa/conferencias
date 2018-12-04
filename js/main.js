@@ -198,8 +198,8 @@ $(function(){
 
   //Programa para las conferencias
 
-  $('.programa-evento a:first').addClass('activo');
-  $('.ocultar:first').show();
+  $('.programa-evento a:last').addClass('activo');
+  $('.ocultar:last').show();
 
   $('.programa-evento a').on('click', tabularEvento);
 
@@ -228,6 +228,10 @@ $(function(){
     $('#minutos').html(event.strftime('%M'));
     $('#segundos').html(event.strftime('%S'));
   });
+
+  //colorbox
+
+  $('.invitados-info').colorbox({inline:true, width:"50%"});
 
 
 });

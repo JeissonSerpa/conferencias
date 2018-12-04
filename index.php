@@ -21,57 +21,50 @@
 			<div class="contenedor">
 				<div class="programa-evento">
 					<h2>Programa Evento</h2>
+
+					<?php
+						try{
+							require_once('includes/funciones/conexion.php');
+							$sql = "SELECT * FROM categoriaEvento";
+							$consulta = $conn->query($sql);
+
+						}catch(Ecxeption $e){
+							echo $e->getMessage();
+						} 	
+						
+    			?>
 					<nav class="menu-programa">
-						<a href="#talleres"><i class="fas fa-code"></i> Talleres</a>
-						<a href="#conferencias"><i class="fas fa-comment"></i> Conferencias</a>
-						<a href="#seminarios"><i class="fas fa-university"></i> Seminarios</a>
+						<?php 
+						while($row = $consulta->fetch_assoc()){
+					
+							echo "<a href='#".strtolower($row['cat_evento'])."'><i class='fas ".$row['icono']."'></i>".$row['cat_evento']."</a>";
+					 	}
+					 ?>
 					</nav>
 
-					<div id="talleres" class="info-curso ocultar clearfix">
-						<div class="detalle-evento">
-							<h3>HTML5, CSS3 y JavaScript</h3>
-							<p><i class="fas fa-clock"></i> 17:00</p>
-							<p><i class="fas fa-calendar-alt"></i> 06-10-2018</p>
-							<p><i class="fas fa-user"></i> Jeisson Serpa Romero</p>
-						</div>
+					<?php
+						try{
+							$sql = "SELECT nombre_evento, fecha_evento, hora_evento, cat_evento, id_cat_evento, icono, nombre, apellido FROM eventos 
+											LEFT JOIN categoriaEvento ON id_cat_evento = id_categoria
+											LEFT JOIN invitados ON id_invi = id_invitado
+											where id_cat_evento = 1";
+							$consulta = $conn->query($sql);
 
-						<div class="detalle-evento">
-							<h3>Desarrollo Web</h3>
-							<p><i class="fas fa-clock"></i> 19:30</p>
-							<p><i class="fas fa-calendar-alt"></i> 07-10-2018</p>
-							<p><i class="fas fa-user"></i> Jeisson Serpa Romero</p>
-						</div>
-					
-						<div class="detalle-evento">
-							<h3>Back-END</h3>
-							<p><i class="fas fa-clock"></i> 07:30</p>
-							<p><i class="fas fa-calendar-alt"></i> 20-10-2018</p>
-							<p><i class="fas fa-user"></i> Jeisson Serpa Romero</p>
-						</div>
-					</div><!--Talleres-->
+						}catch(Ecxeption $e){
+							echo $e->getMessage();
+						} 
 
-					<div id="conferencias" class="info-curso ocultar clearfix">
-						<div class="detalle-evento">
-							<h3>Como ser Freelancer</h3>
-							<p><i class="fas fa-clock"></i> 10:00</p>
-							<p><i class="fas fa-calendar-alt"></i> 07-11-2018</p>
-							<p><i class="fas fa-user"></i> Jeisson Serpa Romero</p>
-						</div>
+						$row = $consulta->fetch_assoc();
 
-						<div class="detalle-evento">
-							<h3>Tecnologia del Futuro</h3>
-							<p><i class="fas fa-clock"></i> 08:00</p>
-							<p><i class="fas fa-calendar-alt"></i> 07-12-2018</p>
-							<p><i class="fas fa-user"></i> Jeisson Serpa Romero</p>
-						</div>
-					
+						echo "<pre>".var_dump($row)."</pre>";
+					?>
 						<div class="detalle-evento">
 							<h3>Diseño UI/UX para Moviles</h3>
 							<p><i class="fas fa-clock"></i> 11:30</p>
 							<p><i class="fas fa-calendar-alt"></i> 14-01-2019</p>
 							<p><i class="fas fa-user"></i> Jeisson Serpa Romero</p>
 						</div>
-					</div><!--conferencias-->
+					</div><!--Programas-->
 
 					<div id="seminarios" class="info-curso ocultar clearfix">
 						<div class="detalle-evento">
@@ -102,47 +95,7 @@
 		</div>
 	</section><!--contenedor talleres-->
 
-	<section class="contenedor seccion invitados">
-		<h2>Nuestros Invitados</h2>
-		<ul class="lista-invitados clearfix">
-			<li>
-				<div class="invitado">
-					<img src="img/invitado1.jpg" alt="Lista de invitados">
-					<p>Rafael Bautista</p>
-				</div>
-			</li>
-			<li>
-				<div class="invitado">
-					<img src="img/invitado2.jpg" alt="Lista de invitados">
-					<p>Angie Suarez</p>
-				</div>
-			</li>
-			<li>
-				<div class="invitado">
-					<img src="img/invitado3.jpg" alt="Lista de invitados">
-					<p>Oscar Sandoval</p>
-				</div>
-			</li>
-			<li>
-				<div class="invitado">
-					<img src="img/invitado4.jpg" alt="Lista de invitados">
-					<p>Susana Rivera</p>
-				</div>
-			</li>
-			<li>
-				<div class="invitado">
-					<img src="img/invitado5.jpg" alt="Lista de invitados">
-					<p>Harold Garcia</p>
-				</div>
-			</li>
-			<li>
-				<div class="invitado">
-					<img src="img/invitado6.jpg" alt="Lista de invitados">
-					<p>Susan Sanchez</p>
-				</div>
-			</li>
-		</ul>
-	</section>
+	<?php include_once 'includes/template/invitados.php'; ?>
 
 	<div class="contador parallax">
 		<div class="contenedor">
