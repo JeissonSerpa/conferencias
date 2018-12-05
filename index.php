@@ -37,7 +37,7 @@
 						<?php 
 						while($row = $consulta->fetch_assoc()){
 					
-							echo "<a href='#".strtolower($row['cat_evento'])."'><i class='fas ".$row['icono']."'></i>".$row['cat_evento']."</a>";
+							echo "<a href='#".strtolower($row['cat_evento'])."' class='nav-categoria'><i class='fas ".$row['icono']."'></i>".$row['cat_evento']."</a>";
 					 	}
 					 ?>
 					</nav>
@@ -45,51 +45,69 @@
 					<?php
 						try{
 							$sql = "SELECT nombre_evento, fecha_evento, hora_evento, cat_evento, id_cat_evento, icono, nombre, apellido FROM eventos 
-											LEFT JOIN categoriaEvento ON id_cat_evento = id_categoria
-											LEFT JOIN invitados ON id_invi = id_invitado
-											where id_cat_evento = 1";
+							LEFT JOIN categoriaEvento ON id_cat_evento = id_categoria
+							LEFT JOIN invitados ON id_invi = id_invitado
+							where id_cat_evento = 1 and RAND() < (SELECT ((3/COUNT(*))*10) FROM eventos) ORDER BY RAND()  limit 3;";
 							$consulta = $conn->query($sql);
+
+							$sql2 = "SELECT nombre_evento, fecha_evento, hora_evento, cat_evento, id_cat_evento, icono, nombre, apellido FROM eventos 
+							LEFT JOIN categoriaEvento ON id_cat_evento = id_categoria
+							LEFT JOIN invitados ON id_invi = id_invitado
+							where id_cat_evento = 2 and RAND() < (SELECT ((3/COUNT(*))*10) FROM eventos) ORDER BY RAND()  limit 3;";
+							$consulta2 = $conn->query($sql2);
+
+							$sql3 = "SELECT nombre_evento, fecha_evento, hora_evento, cat_evento, id_cat_evento, icono, nombre, apellido FROM eventos 
+							LEFT JOIN categoriaEvento ON id_cat_evento = id_categoria
+							LEFT JOIN invitados ON id_invi = id_invitado
+							where id_cat_evento = 3 and RAND() < (SELECT ((3/COUNT(*))*10) FROM eventos) ORDER BY RAND()  limit 3;";
+							$consulta3 = $conn->query($sql3);
 
 						}catch(Ecxeption $e){
 							echo $e->getMessage();
 						} 
-
-						$row = $consulta->fetch_assoc();
-
-						echo "<pre>".var_dump($row)."</pre>";
 					?>
-						<div class="detalle-evento">
-							<h3>Diseño UI/UX para Moviles</h3>
-							<p><i class="fas fa-clock"></i> 11:30</p>
-							<p><i class="fas fa-calendar-alt"></i> 14-01-2019</p>
-							<p><i class="fas fa-user"></i> Jeisson Serpa Romero</p>
-						</div>
-					</div><!--Programas-->
 
-					<div id="seminarios" class="info-curso ocultar clearfix">
-						<div class="detalle-evento">
-							<h3>Aprende a Programar en una Mañana</h3>
-							<p><i class="fas fa-clock"></i> 14:00</p>
-							<p><i class="fas fa-calendar-alt"></i> 12-01-2019</p>
-							<p><i class="fas fa-user"></i> Jeisson Serpa Romero</p>
-						</div>
-
-						<div class="detalle-evento">
-							<h3>Desarrollo Web</h3>
-							<p><i class="fas fa-clock"></i> 19:30</p>
-							<p><i class="fas fa-calendar-alt"></i> 07-10-2018</p>
-							<p><i class="fas fa-user"></i> Jeisson Serpa Romero</p>
-						</div>
-					
-						<div class="detalle-evento">
-							<h3>Back-END</h3>
-							<p><i class="fas fa-clock"></i> 07:30</p>
-							<p><i class="fas fa-calendar-alt"></i> 20-10-2018</p>
-							<p><i class="fas fa-user"></i> Jeisson Serpa Romero</p>
-						</div>
+					<div id='talleres' class='info-curso ocultar clearfix'>
+					<?php
+						while($row = $consulta->fetch_assoc()){
+							echo	"<div class='detalle-evento'>
+												<h3>".$row['nombre_evento']."</h3>
+												<p><i class='fas fa-clock'></i> ".$row['hora_evento']."</p>
+												<p><i class='fas fa-calendar-alt'></i> ".$row['fecha_evento']."</p>
+												<p><i class='fas fa-user'></i> ".$row['nombre']." ".$row['apellido']."</p>
+											</div>";						
+						}
+					?>
 					</div><!--seminarios-->
 
-					<a href="#" class="float-right leer">Leer mas</a>
+					<div id='conferencias' class='info-curso ocultar clearfix'>
+					<?php
+						while($row = $consulta2->fetch_assoc()){
+							echo	"<div class='detalle-evento'>
+												<h3>".$row['nombre_evento']."</h3>
+												<p><i class='fas fa-clock'></i> ".$row['hora_evento']."</p>
+												<p><i class='fas fa-calendar-alt'></i> ".$row['fecha_evento']."</p>
+												<p><i class='fas fa-user'></i> ".$row['nombre']." ".$row['apellido']."</p>
+											</div>";						
+						}
+					?>
+					</div><!--seminarios-->
+
+					<div id='seminarios' class='info-curso ocultar clearfix'>
+					<?php
+						while($row = $consulta3->fetch_assoc()){
+							echo	"<div class='detalle-evento'>
+												<h3>".$row['nombre_evento']."</h3>
+												<p><i class='fas fa-clock'></i> ".$row['hora_evento']."</p>
+												<p><i class='fas fa-calendar-alt'></i> ".$row['fecha_evento']."</p>
+												<p><i class='fas fa-user'></i> ".$row['nombre']." ".$row['apellido']."</p>
+											</div>";						
+						}
+					?>
+					</div><!--seminarios-->
+
+					
+					<a href="calendario.php" class="float-right leer">Leer mas</a>
 				</div><!--Programacion de eventos ID talleres-->
 			</div>
 		</div>

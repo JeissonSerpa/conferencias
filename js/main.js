@@ -201,10 +201,10 @@ $(function(){
   $('.programa-evento a:last').addClass('activo');
   $('.ocultar:last').show();
 
-  $('.programa-evento a').on('click', tabularEvento);
+  $('.programa-evento a.nav-categoria').on('click', tabularEvento);
 
   function tabularEvento(){
-    $('.programa-evento a').removeClass('activo');
+    $('.programa-evento a.nav-categoria').removeClass('activo');
     $(this).addClass('activo');
     $('.ocultar').hide();
     let  enlace = $(this).attr('href');
