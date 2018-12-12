@@ -596,6 +596,10 @@ div.detalle-evento:nth-child(3){
     border: none;
 }
 
+input[disabled].button {
+    opacity: .5;
+  }
+
 .leer.hollow{
     display: inline-block;
     margin-top: 50px;
@@ -626,13 +630,8 @@ div.detalle-evento:nth-child(3){
     border: solid 1px rgba(250, 250, 250, .3);
     padding: 8px 25px;
     border-radius: 6px;
-}
-
-.leer:hover{
-    background: #ffffff;
-    color: #fe4918;
-    transition: all .5s ease;
-    border: solid 1px #fe4918;
+    cursor: pointer;
+    
 }
 
 .leer.transparencia{
@@ -654,6 +653,10 @@ div.detalle-evento:nth-child(3){
     color: #ffffff;
     transition: all .5s ease;
 }
+
+input[disabled].leer {
+    opacity: .5;
+  }
 
 .float-right{
     float: right;
@@ -1225,7 +1228,9 @@ div.invitados-none{
 
 div.invitados-info{
     text-align: center;
+    width: 95% !important;
 }
+
 
 div.invitados-info img{
     width: 80%;

@@ -47,6 +47,8 @@
     let listaProductos = document.getElementById('lista-productos');
     let sumaTotal = document.getElementById('suma-total');
 
+    btnRegistro.disabled = true;
+
     //Evento validacion formulario
 
     if(nombre){
@@ -159,6 +161,10 @@
 
           sumaTotal.innerHTML = '';
           sumaTotal.innerHTML += '$ ' + totalProductos.toFixed(2);
+
+          btnRegistro.disabled = false;
+
+          document.getElementById('total-pagar').value = totalProductos;
       }
         
       }
