@@ -807,7 +807,7 @@ ul li div.tabla-precio:hover{
 }
 
 div.tabla-precio ul li{
-    font-family: ont-family: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
     font-size: 15px;
     margin: 30px 0;
     text-transform: uppercase;
@@ -824,12 +824,12 @@ leer.hollow{
 }
 
 div.tabla-precio ul li::before{
-    font-family: 'FontAwesome';
+    content: '\2714';
+    font-family: "Font Awesome";
     display: inline-block;
     padding: 0 5px;
     font-size: 20px;
     color: green;
-    content: '\f00c';
 }
 
 /*Mapa*/
