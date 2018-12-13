@@ -219,7 +219,7 @@
 		<div class="contenedor contenido">
 			<p>Registrate a el newsleter:</p>
 			<h1>GDLWEBCAM</h1>
-			<a href="#" class="leer transparencia">Registro</a>
+			<a href="registro.php" class="leer transparencia">Registro</a>
 		</div>
 	</div><!--fin de seccion de registro-->
 

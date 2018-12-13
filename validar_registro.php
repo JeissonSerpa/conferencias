@@ -52,4 +52,12 @@
 
   </section>
 
+  <?php
+
+    if(isset($_GET)){
+      echo "<span><h3>Registro Exitoso</h3></span>";
+    }
+
+  ?>
+
 <?php include_once 'includes/template/footer.php'; ?>

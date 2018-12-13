@@ -1099,9 +1099,14 @@ div.resumen p{
 }
 
 div.resumen div.extras{
-    float: left;
     width: 45.5%;
     padding: 45px .5%;
+}
+
+@media only screen and (min-width: 768px){
+    div.resumen div.extras{
+        float: left;
+    }
 }
 
 div.extras div.orden{
@@ -1111,6 +1116,7 @@ div.extras div.orden{
 
 div.extras div.orden label{
     padding: 15px;
+    width: 100%;
 }
 
 div.extras div.orden input{
@@ -1234,4 +1240,9 @@ div.invitados-info{
 
 div.invitados-info img{
     width: 80%;
+}
+
+span h3{
+    text-align: center;
+    margin-bottom: 60px;
 }
