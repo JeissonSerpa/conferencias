@@ -7,9 +7,24 @@
       try{
 
         require_once('includes/funciones/conexion.php');
-        $sql = "SELECT nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre, apellido FROM eventos 
-                LEFT JOIN categoriaEvento ON id_cat_evento = id_categoria
-                LEFT JOIN invitados ON id_invi = id_invitado";
+        $sql = "SELECT 
+                  EV.nombreEvento, 
+                  EV.fechaEvento, 
+                  EV.horaEvento, 
+                  CTEV.catEvento, 
+                  CTEV.icono, 
+                  IV.nombreInvitado, 
+                  IV.apellidoInvitado 
+                FROM 
+                  eventos as EV
+                LEFT JOIN 
+                  categoriaEvento as CTEV 
+                ON 
+                  idCategoria = idCategoriaEvento
+                LEFT JOIN 
+                  invitados as IV 
+                ON 
+                  invitadoId = idInv";
         $consulta = $conn->query($sql);
 
       }catch(Ecxeption $e){
@@ -22,15 +37,15 @@
         $calendario = [];
         while($row = $consulta->fetch_assoc()){
 
-          $fecha = $row['fecha_evento'];
+          $fecha = $row['fechaEvento'];
 
           $evento = [
-            'titulo' => $row['nombre_evento'],
-            'fecha' => $row['fecha_evento'],
-            'hora' => $row['hora_evento'],
-            'categoria' => $row['cat_evento'],
+            'titulo' => $row['nombreEvento'],
+            'fecha' => $row['fechaEvento'],
+            'hora' => $row['horaEvento'],
+            'categoria' => $row['catEvento'],
             'icono' => $row['icono'],
-            'nombre' => $row['nombre']. ' ' .$row['apellido']
+            'nombre' => $row['nombreInvitado']. ' ' .$row['apellidoInvitado']
           ];
 
           $calendario[$fecha][] = $evento;
@@ -42,7 +57,8 @@
 
         foreach($calendario as $dia => $listaEventos){
           echo "<h3> <i class= 'fas fa-calendar-alt'></i>".' '.
-          utf8_encode(strftime('%A, %d de %B del %Y', strtotime($dia))."</h3>");
+          utf8_encode(strftime('%A, %d de %B del %Y', strtotime($dia))."</h3>
+          <div class='clearfix centrar'>");
         
          foreach($listaEventos as $evento){
           echo "<div class='dia'>
@@ -52,6 +68,7 @@
                   <p class='invitado'><i class='fas fa-user' arial-hidden='true'></i> ". $evento['nombre'] ."</p>
                 </div>";
          }
+          echo "</div>";
         }
       ?>
 

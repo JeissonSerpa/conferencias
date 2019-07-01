@@ -25,7 +25,7 @@
 					<?php
 						try{
 							require_once('includes/funciones/conexion.php');
-							$sql = "SELECT * FROM categoriaEvento";
+							$sql = "SELECT * FROM categoriaevento";
 							$consulta = $conn->query($sql);
 
 						}catch(Ecxeption $e){
@@ -37,29 +37,86 @@
 						<?php 
 						while($row = $consulta->fetch_assoc()){
 					
-							echo "<a href='#".strtolower($row['cat_evento'])."' class='nav-categoria'><i class='fas ".$row['icono']."'></i>".$row['cat_evento']."</a>";
+							echo "<a href='#".strtolower($row['catEvento'])."' class='nav-categoria'><i class='fas ".$row['icono']."'></i>".$row['catEvento']."</a>";
 					 	}
 					 ?>
 					</nav>
 
 					<?php
 						try{
-							$sql = "SELECT nombre_evento, fecha_evento, hora_evento, cat_evento, id_cat_evento, icono, nombre, apellido FROM eventos 
-							LEFT JOIN categoriaEvento ON id_cat_evento = id_categoria
-							LEFT JOIN invitados ON id_invi = id_invitado
-							where id_cat_evento = 1 and RAND() < (SELECT ((3/COUNT(*))*10) FROM eventos) ORDER BY RAND()  limit 3;";
+							$sql = "SELECT 
+										EV.nombreEvento, 
+										EV.fechaEvento, 
+										EV.horaEvento, 
+										CTEV.catEvento, 
+										EV.idCategoriaEvento, 
+										CTEV.icono, 
+										Inv.nombreInvitado,
+										Inv.apellidoInvitado 
+									FROM 
+										eventos as EV 
+									LEFT JOIN 
+										categoriaEvento as CTEV
+									ON 
+										idCategoria = idCategoriaEvento
+									LEFT JOIN 
+										invitados as Inv
+									ON 
+										InvitadoId = idInv
+									WHERE
+										idCategoriaEvento = 1 and RAND() < (SELECT ((3/COUNT(*))*10) FROM eventos) 
+									ORDER BY RAND()  
+									LIMIT 3;";
 							$consulta = $conn->query($sql);
 
-							$sql2 = "SELECT nombre_evento, fecha_evento, hora_evento, cat_evento, id_cat_evento, icono, nombre, apellido FROM eventos 
-							LEFT JOIN categoriaEvento ON id_cat_evento = id_categoria
-							LEFT JOIN invitados ON id_invi = id_invitado
-							where id_cat_evento = 2 and RAND() < (SELECT ((3/COUNT(*))*10) FROM eventos) ORDER BY RAND()  limit 3;";
+							$sql2 = "SELECT 
+										EV.nombreEvento, 
+										EV.fechaEvento, 
+										EV.horaEvento, 
+										CTEV.catEvento, 
+										EV.idCategoriaEvento, 
+										CTEV.icono, 
+										Inv.nombreInvitado,
+										Inv.apellidoInvitado 
+									FROM 
+										eventos as EV 
+									LEFT JOIN 
+										categoriaEvento as CTEV
+									ON 
+										idCategoria = idCategoriaEvento
+									LEFT JOIN 
+										invitados as Inv
+									ON 
+										InvitadoId = idInv
+									WHERE
+										idCategoriaEvento = 2 and RAND() < (SELECT ((3/COUNT(*))*10) FROM eventos) 
+									ORDER BY RAND()  
+									LIMIT 3;";
 							$consulta2 = $conn->query($sql2);
 
-							$sql3 = "SELECT nombre_evento, fecha_evento, hora_evento, cat_evento, id_cat_evento, icono, nombre, apellido FROM eventos 
-							LEFT JOIN categoriaEvento ON id_cat_evento = id_categoria
-							LEFT JOIN invitados ON id_invi = id_invitado
-							where id_cat_evento = 3 and RAND() < (SELECT ((3/COUNT(*))*10) FROM eventos) ORDER BY RAND()  limit 3;";
+							$sql3 = "SELECT 
+										EV.nombreEvento, 
+										EV.fechaEvento, 
+										EV.horaEvento, 
+										CTEV.catEvento, 
+										EV.idCategoriaEvento, 
+										CTEV.icono, 
+										Inv.nombreInvitado,
+										Inv.apellidoInvitado 
+									FROM 
+										eventos as EV 
+									LEFT JOIN 
+										categoriaEvento as CTEV
+									ON 
+										idCategoria = idCategoriaEvento
+									LEFT JOIN 
+										invitados as Inv
+									ON 
+										InvitadoId = idInv
+									WHERE
+										idCategoriaEvento = 3 and RAND() < (SELECT ((3/COUNT(*))*10) FROM eventos) 
+									ORDER BY RAND()  
+									LIMIT 3;";
 							$consulta3 = $conn->query($sql3);
 
 						}catch(Ecxeption $e){
@@ -71,10 +128,10 @@
 					<?php
 						while($row = $consulta->fetch_assoc()){
 							echo	"<div class='detalle-evento'>
-												<h3>".$row['nombre_evento']."</h3>
-												<p><i class='fas fa-clock'></i> ".$row['hora_evento']."</p>
-												<p><i class='fas fa-calendar-alt'></i> ".$row['fecha_evento']."</p>
-												<p><i class='fas fa-user'></i> ".$row['nombre']." ".$row['apellido']."</p>
+												<h3>".$row['nombreEvento']."</h3>
+												<p><i class='fas fa-clock'></i> ".$row['horaEvento']."</p>
+												<p><i class='fas fa-calendar-alt'></i> ".$row['fechaEvento']."</p>
+												<p><i class='fas fa-user'></i> ".$row['nombreInvitado']." ".$row['apellidoInvitado']."</p>
 											</div>";						
 						}
 					?>
@@ -84,10 +141,10 @@
 					<?php
 						while($row = $consulta2->fetch_assoc()){
 							echo	"<div class='detalle-evento'>
-												<h3>".$row['nombre_evento']."</h3>
-												<p><i class='fas fa-clock'></i> ".$row['hora_evento']."</p>
-												<p><i class='fas fa-calendar-alt'></i> ".$row['fecha_evento']."</p>
-												<p><i class='fas fa-user'></i> ".$row['nombre']." ".$row['apellido']."</p>
+												<h3>".$row['nombreEvento']."</h3>
+												<p><i class='fas fa-clock'></i> ".$row['horaEvento']."</p>
+												<p><i class='fas fa-calendar-alt'></i> ".$row['fechaEvento']."</p>
+												<p><i class='fas fa-user'></i> ".$row['nombreInvitado']." ".$row['apellidoInvitado']."</p>
 											</div>";						
 						}
 					?>
@@ -97,10 +154,10 @@
 					<?php
 						while($row = $consulta3->fetch_assoc()){
 							echo	"<div class='detalle-evento'>
-												<h3>".$row['nombre_evento']."</h3>
-												<p><i class='fas fa-clock'></i> ".$row['hora_evento']."</p>
-												<p><i class='fas fa-calendar-alt'></i> ".$row['fecha_evento']."</p>
-												<p><i class='fas fa-user'></i> ".$row['nombre']." ".$row['apellido']."</p>
+												<h3>".$row['nombreEvento']."</h3>
+												<p><i class='fas fa-clock'></i> ".$row['horaEvento']."</p>
+												<p><i class='fas fa-calendar-alt'></i> ".$row['fechaEvento']."</p>
+												<p><i class='fas fa-user'></i> ".$row['nombreInvitado']." ".$row['apellidoInvitado']."</p>
 											</div>";						
 						}
 					?>

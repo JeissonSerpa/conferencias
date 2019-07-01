@@ -1188,8 +1188,13 @@ div.resumen input{
     padding: 20px 0 20px 0;
 }
 
+.centrar{
+    margin: 0 auto;
+}
+
 div div.dia{
     width: 100%;
+    height: 14rem;
     margin: 0 1% 20px 1%;
     margin-bottom: 20px;
     border: 1px solid #e1e1e1;
@@ -1200,7 +1205,7 @@ div div.dia{
 
 @media only screen and (min-width: 929px){
     div div.dia{
-        width: 31%;
+        width: 31.1%;
         float: left;
     }
 }

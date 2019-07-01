@@ -17,16 +17,16 @@
         while($row = $consulta->fetch_assoc()){
           echo "<li>
                 <div class='invitado'>
-                  <a class='invitados-info' href='#invitado".$row['id_invitado']."'>
-                    <img src='img/".$row['url_imagen']."' alt='Lista de invitados'>
-                    <p>".$row['nombre']." ".$row['apellido']."</p>
+                  <a class='invitados-info' href='#invitado".$row['invitadoId']."'>
+                    <img src='img/".$row['urlImagen']."' alt='Lista de invitados'>
+                    <p>".$row['nombreInvitado']." ".$row['apellidoInvitado']."</p>
                   </a>
                 </div>
               </li>
               <div class='invitados-none'>
-                <div class='invitados-info' id='invitado".$row['id_invitado']."'>
-                  <h2>".$row['nombre']." ".$row['apellido']."</h2>
-                  <img src='img/".$row['url_imagen']."' alt='Lista de invitados'>
+                <div class='invitados-info' id='invitado".$row['invitadoId']."'>
+                  <h2>".$row['nombreInvitado']." ".$row['apellidoInvitado']."</h2>
+                  <img src='img/".$row['urlImagen']."' alt='Lista de invitados'>
                   <p>".$row['descripcion']."</p>
                 </div>
               </div>";
